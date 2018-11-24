@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12" style="background-color: #337abc">
+      <div class="logo">
+        <h2 style="color:#fff">AdminApp</h2>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th colspan="1" style="text-align: center;">
+            Template Name
+          </th>
+          <th style="text-align: center;">
+            Status
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let template of templateList;let i=index">
+          <td colspan="1" [ngClass]="template.isActive ? 'activeTemplate' : ''">
+            {{(i+1) +'. '+ template.name}}
+          </td>
+          <td>
+            <input type="radio" name="template" [checked]='template.isActive' (change)="selectTemplate(template.name)" />
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <button class="btn btn-success btn-lg" (click)="activateTemplate()">Activate</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

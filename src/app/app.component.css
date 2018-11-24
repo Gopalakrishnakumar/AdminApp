@@ -1,0 +1,29 @@
+.table{
+    width: 50%;
+    margin-left: 20%;
+    margin-top: 5%;
+    border: 2px solid rgb(209, 209, 209);
+    font-size: 20px;
+}
+
+.radio{
+    color: green;
+}
+
+.container{
+    text-align: center;
+}
+
+tr :first-child{
+    border-right: 1px solid rgb(209, 209, 209);
+    width: 50%;
+}
+
+thead{
+    background-color: #337abc;
+    color: white;
+}
+
+.activeTemplate{
+    color: rgb(4, 177, 4);
+}
