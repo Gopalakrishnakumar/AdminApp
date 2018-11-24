@@ -10,13 +10,13 @@ export class AppService {
   public activationStatus$:BehaviorSubject<boolean> = new BehaviorSubject<boolean>(undefined);
   
   constructor(private http:HttpClient) { }
-
+  
   getTemplateList(){
-    this.http.get(`url`).subscribe((res:any[]) => this.templateList$.next(res));
+    this.http.get(`https://insurance-reference-app.cfapps.io/v1/getActiveTemplates`).subscribe((res:any[]) => this.templateList$.next(res));
   }
 
   activateTemplate(templateList){
-    this.http.post(`url`,templateList).subscribe(res => this.activationStatus$.next(res != undefined));
+    this.http.post(`https://insurance-reference-app.cfapps.io/v1/updateActiveTemplates`,templateList).subscribe(res => this.activationStatus$.next(res != undefined));
   }
 
 }
