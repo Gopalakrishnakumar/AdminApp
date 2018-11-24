@@ -28,6 +28,14 @@
           </td>
         </tr>
         <tr>
+          <td>
+            <input type="text" [(ngModel)]='newTemplate'/>
+          </td>
+          <td>
+            <input type="button" value="Add" (click)='addtemplate()'/>
+          </td>
+        </tr>
+        <tr>
           <td></td>
           <td>
             <button class="btn btn-success btn-lg" (click)="activateTemplate()">Activate</button>

@@ -16,7 +16,7 @@ export class AppService {
   }
 
   activateTemplate(templateList){
-    this.http.post(`https://insurance-reference-app.cfapps.io/v1/updateActiveTemplates`,templateList).subscribe(res => this.activationStatus$.next(res != undefined));
+    this.http.post(`https://insurance-reference-app.cfapps.io/v1/updateActiveTemplates`,templateList).subscribe(res => this.activationStatus$.next(true));
   }
 
 }

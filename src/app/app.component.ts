@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AppService } from './app.service';
 import { Observable } from 'rxjs';
+import { resetComponentState } from '@angular/core/src/render3/instructions';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,7 @@ import { Observable } from 'rxjs';
 export class AppComponent {
   private templateList$: Observable<any[]>;
   private activationStatus$: Observable<boolean>;
+  newTemplate:string="";
   constructor(private appService: AppService) {
   }
 
@@ -47,5 +49,14 @@ export class AppComponent {
 
   activateTemplate() {
     this.appService.activateTemplate(this.templateList);
+  }
+
+  addtemplate(){
+    this.templateList.push({"name":this.newTemplate,"isActive":false});
+    this.resetTextBox();
+  }
+
+  resetTextBox(){
+    this.newTemplate = "";
   }
 }
